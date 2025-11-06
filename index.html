@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cipher Encryption Tool</title>
+  <link rel="stylesheet" href="..\static/style.css">
+  <script></script>
+</head>
+<body>
+  <pyscript src="app.py"></pyscript>
+  <div class="container">
+    <h2>🔐 Cipher Encryption Tool</h2>
+    <form method="POST">
+      <label for="algorithm">Select Cipher:</label>
+      <select name="algorithm" required>
+        <option value="caesar">Caesar Cipher</option>
+        <option value="mono">Monoalphabetic Cipher</option>
+        <option value="playfair">Playfair Cipher</option>
+        <option value="hill">Hill Cipher</option>
+        <option value="vigenere">Vigenère Cipher</option>
+        <option value="rail">Rail Fence Cipher</option>
+        <option value="row">Row-Column Transposition</option>
+      </select>
+
+      <label for="plaintext">Enter Plaintext:</label>
+      <input type="text" name="plaintext" required placeholder="Enter text...">
+
+      <label for="key">Enter Key (if needed):</label>
+      <input type="text" name="key" placeholder="Enter key or number">
+
+      <button type="submit">Encrypt</button>
+    </form>
+
+    {% if result %}
+      <div class="result">
+        <h3>🔒 Encrypted Text:</h3>
+        <p>{{ result }}</p>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
